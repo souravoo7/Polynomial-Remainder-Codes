@@ -1,0 +1,14 @@
+function [ A ] = randomize(A)
+%This function randomly induces errors into the matrix A 
+[n,m]=size(A);
+tot=n*m;
+p=ceil(tot/10);% 10% error
+i=1; 
+while(i<10)
+    a=randperm(n);
+    b=randperm(m);
+    if(A(a,b)>0)
+    i=i+1;
+end
+end
+
